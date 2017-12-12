@@ -1,0 +1,26 @@
+{
+  "name": "posthtml-sugar-srcset",
+  "version": "0.1.0",
+  "description": "This shortens the description of the value of srcset.",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tsuguya/posthtml-sugar-srcset"
+  },
+  "scripts": {
+    "test": "mocha nyc 'test/**/*.js'"
+  },
+  "keywords": [
+    "posthtml-plugin",
+    "srcset",
+    "picture"
+  ],
+  "author": "Tsuguya Toma",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "posthtml": "^0.10.1",
+    "power-assert": "^1.4.4"
+  }
+}
