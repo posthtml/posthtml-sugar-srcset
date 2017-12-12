@@ -8,7 +8,7 @@
     "url": "https://github.com/Tsuguya/posthtml-sugar-srcset"
   },
   "scripts": {
-    "test": "mocha nyc 'test/**/*.js'"
+    "test": "nyc mocha 'test/**/*.js'"
   },
   "keywords": [
     "posthtml-plugin",
