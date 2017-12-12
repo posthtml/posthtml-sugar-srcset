@@ -1,44 +1,41 @@
 const assert = require('power-assert');
 const posthtml = require('../posthtml');
-const options = require('../../lib/options');
 
-const case1 = options();
+const case1 = undefined;
 
-const case2 = options({
+const case2 = {
   replace: {
     large: '(min-width: 1000px)',
     medium: '(min-width: 800px)'
   }
-});
+};
 
-const case3 = options({
-  sourceSrc: false
-});
+const case3 = { sourceSrc: false };
 
-const case4 = options({
+const case4 = {
   replace: {
     large: '(min-width: 1000px)',
     medium: '(min-width: 800px)'
   },
   sourceSrc: false
-});
+};
 
-const case5 = options({
+const case5 = {
   responsive: { srcReplace: 320 }
-});
+};
 
-const case6 = options({
+const case6 = {
   responsive: { src: true }
-});
+};
 
-const case7 = options({
+const case7 = {
   responsive: {
     src: true,
     width: [320, 640, 900]
   },
-});
+};
 
-const case8 = options({
+const case8 = {
   responsive: {
     src: true,
     width: [320, 640, 900],
@@ -47,7 +44,7 @@ const case8 = options({
     large: '(min-width: 1000px)',
     medium: '(min-width: 800px)'
   }
-});
+};
 
 describe('picture', () => {
 

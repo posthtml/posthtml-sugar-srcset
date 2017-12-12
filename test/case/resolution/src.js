@@ -1,38 +1,37 @@
 const assert = require('power-assert');
 const posthtml = require('../../posthtml');
-const options = require('../../../lib/options');
 
-const case1 = options();
+const case1 = undefined;
 
-const case2 = options({
+const case2 = {
   resolution: {
     skip1x: false
   }
-});
+};
 
-const case3 = options({
+const case3 = {
   resolution: {
     skip1xSuffix: false
   }
-});
+};
 
-const case4 = options({
+const case4 = {
   resolution: {
     skip1x: false, skip1xSuffix: false
   }
-});
+};
 
-const case5 = options({
+const case5 = {
   resolution: {
     srcReplace: -1
   }
-});
+};
 
-const case6 = options({
+const case6 = {
   resolution: {
     src: false, srcset: true
   }
-});
+};
 
 describe('src', () => {
 

@@ -1,8 +1,7 @@
 const assert = require('power-assert');
 const posthtml = require('../posthtml');
-const options = require('../../lib/options');
 
-const case1 = options();
+const case1 = undefined;
 
 describe('common', () => {
 

@@ -1,66 +1,65 @@
 const assert = require('power-assert');
 const posthtml = require('../../posthtml');
-const options = require('../../../lib/options');
 
-const case1 = options({
+const case1 = {
   responsive: {
     src: true,
     width: [320, 640],
     srcReplace: 320
   }
-});
+};
 
-const case2 = options({
+const case2 = {
   responsive: {
     src: true,
     width: [320, 640],
     srcReplace: 640
   }
-});
+};
 
-const case3 = options({
+const case3 = {
   responsive: {
     src: true,
     width: [320, 640],
     // srcReplace: -1 // default value
   }
-});
+};
 
-const case4 = options({
+const case4 = {
   responsive: {
     src: true,
     srcset: false,
     width: [320, 640],
     srcReplace: 320
   }
-});
+};
 
-const case5 = options({
+const case5 = {
   responsive: {
     src: true,
     width: [320, 640],
     srcReplace: 320
   },
   replace: { defaultSizes: '(max-width: 700px) 50vw, 700px' }
-});
+};
 
-const case6 = options({
+const case6 = {
   responsive: {
     src: true,
     width: [320, 640],
     srcReplace: 320
   },
   replace: { test: '(max-width: 700px) 50vw', test2: '(max-width: 1000px) 80vw', test3: '500px' }
-});
+};
 
-const case7 = options({
+const case7 = {
   responsive: {
     src: true,
     width: [320, 640],
     srcReplace: 320
   },
   replace: { defaultSizes: '(max-width: 700px) 50vw, 700px', test: '(max-width: 700px) 50vw', test2: '(max-width: 1000px) 80vw', test3: '500px' }
-});
+};
 
 describe('srcset', () => {
 
