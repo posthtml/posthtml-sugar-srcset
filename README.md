@@ -47,7 +47,8 @@ Output:
 const posthtml = require('posthtml');
 const srcset = require('posthtml-sugar-srcset');
 
-posthtml([srcset()])
+posthtml()
+  .use(srcset())
   .process(html)
   .then(res => console.log(res.html));
 ```
@@ -113,7 +114,7 @@ Default: `true`
 ##### responsive.srcset
 
 Type: `boolean`<br>
-Default: `false`
+Default: `true`
 
 ##### responsive.width
 
@@ -126,8 +127,10 @@ ex)
 
 ```js
 srcset({
-    responsive: { src: true },
-    responsiveWidth: [320, 640]
+  responsive: {
+    src: true,
+    width: [320, 640]
+  }
 })
 ```
 
