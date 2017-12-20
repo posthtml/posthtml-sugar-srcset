@@ -8,7 +8,19 @@
     "url": "https://github.com/Tsuguya/posthtml-sugar-srcset"
   },
   "scripts": {
-    "test": "nyc mocha 'test/**/*.js'"
+    "test": "nyc mocha 'test/**/*.js'",
+    "lint": "eslint lib/** --fix",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "lib/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "test/**/*.js": [
+      "eslint --fix --global it --global describe --global beforeEach",
+      "git add"
+    ]
   },
   "keywords": [
     "posthtml-plugin",
@@ -18,9 +30,22 @@
   "author": "Tsuguya Toma",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^4.13.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "mocha": "^4.0.1",
-    "nyc": "^11.3.0",
-    "posthtml": "^0.10.1",
+    "nyc": "^11.4.1",
+    "posthtml": "^0.11.0",
     "power-assert": "^1.4.4"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 7
+    }
   }
 }
