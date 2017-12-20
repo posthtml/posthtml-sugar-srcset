@@ -2,26 +2,30 @@ const assert = require('power-assert');
 const posthtml = require('../posthtml');
 
 const case1 = undefined;
+const case2 = {
+  resolution: false,
+  responsive: false
+};
 
 describe('common', () => {
 
-  it(`Not use.`, async () => {
+  it(`Not use.`, () => {
     const html = `<img src="path/to/filename.png">`;
     const correct = `<img src="path/to/filename.png">`;
 
-    const res = await posthtml(html, case1);
+    const res = posthtml(html, case1);
 
     assert.equal(res, correct);
   });
 
-  it(`Query.`, async () => {
+  it(`Query.`, () => {
     const html = `<img src="path/to/filename@2x.png?foo=bar">`;
     const correct = `<img src="path/to/filename.png?foo=bar" srcset="path/to/filename@2x.png?foo=bar 2x">`;
 
-    assert.equal(await posthtml(html, case1), correct);
+    assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Multi line check.`, async () => {
+  it(`Multi line check.`, () => {
     const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -57,7 +61,51 @@ describe('common', () => {
 </body>
 </html>`;
 
-    assert.equal(await posthtml(html, case1), correct);
+    assert.equal(posthtml(html, case1), correct);
+  });
+
+  it(`Not Change. has srcset. img`, () => {
+    const html = `<img src="path/to/filename.png" srcset="2x">`;
+    const correct = html;
+
+    const res = posthtml(html, case2);
+
+    assert.equal(res, correct);
+  });
+
+  it(`Not Change. has srcset. source`, () => {
+    const html = `<picture>
+<source media="large" srcset="1x, 2x, 3x">
+  <source media="medium" srcset="1x, 2x, 3x">
+<img src="path/to/filename.png" srcset="2x">
+</picture>`;
+    const correct = html;
+
+    const res = posthtml(html, case2);
+
+    assert.equal(res, correct);
+  });
+
+  it(`Not Change. has not srcset. img`, () => {
+    const html = `<img src="path/to/filename@2x.png">`;
+    const correct = html;
+
+    const res = posthtml(html, case2);
+
+    assert.equal(res, correct);
+  });
+
+  it(`Not Change. has not srcset. source`, () => {
+    const html = `<picture>
+<source media="large" src="path/to/filename@3x.png">
+  <source media="medium" src="path/to/filename@3x.png">
+<img src="path/to/filename@2x.png">
+</picture>`;
+    const correct = html;
+
+    const res = posthtml(html, case2);
+
+    assert.equal(res, correct);
   });
 
 });
