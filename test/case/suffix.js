@@ -42,6 +42,13 @@ describe('Suffix RegExp test', () => {
     assert.equal(mw, null);
   });
 
+  it(`not match. [match] invalid float.`, () => {
+    const mx = 'image@.e1x'.match(resolutionSuffixPattern);
+    const mw = 'image-.e1w'.match(responsiveSuffixPattern);
+    assert.equal(mx, null);
+    assert.equal(mw, null);
+  });
+
   it(`only resolution match. [match] is float value. 1`, () => {
     const mx = 'image@1.1x'.match(resolutionSuffixPattern);
     const mw = 'image-1.1w'.match(responsiveSuffixPattern);
@@ -67,6 +74,13 @@ describe('Suffix RegExp test', () => {
     const mx = 'image@.1e1x'.match(resolutionSuffixPattern);
     const mw = 'image-.1e1w'.match(responsiveSuffixPattern);
     assert.equal(mx[0], '@.1e1x');
+    assert.equal(mw, null);
+  });
+
+  it(`only resolution match. [match] is float value. 5`, () => {
+    const mx = 'image@0.e1x'.match(resolutionSuffixPattern);
+    const mw = 'image-0.e1w'.match(responsiveSuffixPattern);
+    assert.equal(mx[0], '@0.e1x');
     assert.equal(mw, null);
   });
 });
