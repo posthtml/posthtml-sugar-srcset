@@ -47,10 +47,6 @@ const case8 = {
 };
 
 describe('picture', () => {
-  beforeEach(() => {
-    
-  });
-
   it(`No:1. Resolution check. use [case1] `, () => {
     const html = `
 <picture>
