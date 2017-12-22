@@ -95,13 +95,17 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
-  it(`Not Change. has not srcset. source`, () => {
+  it(`forcibly remove src. source`, () => {
     const html = `<picture>
 <source media="large" src="path/to/filename@3x.png">
   <source media="medium" src="path/to/filename@3x.png">
 <img src="path/to/filename@2x.png">
 </picture>`;
-    const correct = html;
+    const correct = `<picture>
+<source media="large">
+  <source media="medium">
+<img src="path/to/filename@2x.png">
+</picture>`;
 
     const res = posthtml(html, case2);
 

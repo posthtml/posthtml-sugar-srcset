@@ -77,9 +77,6 @@ describe('Options test', () => {
         src: false,
         srcset: true
       },
-
-      removeSrc: false,
-
       sourceSrc: true,
       replace: {}
     });

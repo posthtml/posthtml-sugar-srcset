@@ -144,13 +144,6 @@ Default: `-[match]w`
 Type: `number`<br>
 Default: `-1`
 
-#### removeSrc
-
-Type: `boolean`<br>
-Default: `false`
-
-If true, removing the src attribute from the image tag
-
 #### replace
 
 Type: `Object`<br>

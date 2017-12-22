@@ -311,8 +311,8 @@ describe('picture', () => {
 
     const correct = `
 <picture>
-  <source src="path/to/filename-large-640w.png" media="large">
-  <source src="path/to/filename-medium-640w.png" media="medium">
+  <source media="large">
+  <source media="medium">
   <img src="path/to/filename-small-640w.png" alt="">
 </picture>`;
 

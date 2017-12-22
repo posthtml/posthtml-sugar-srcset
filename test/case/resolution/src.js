@@ -121,5 +121,4 @@ describe('src', () => {
 
     assert.equal(posthtml(html, case1), correct);
   });
-
 });

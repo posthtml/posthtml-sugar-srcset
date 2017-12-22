@@ -171,4 +171,10 @@ describe('srcset', () => {
     assert.equal(posthtml(html, case7), correct);
   });
 
+  it(`Invalid params.(width) use [case1]`, () => {
+    const html = `<img src="path/to/filename.png" srcset="320.1w, 640e1w, .1e100w, 100ww, 100a, Infinityw">`;
+    const correct = `<img src="path/to/filename-320w.png" srcset="320.1w, 640e1w, .1e100w, 100ww, 100a, Infinityw">`;
+
+    assert.equal(posthtml(html, case1), correct);
+  });
 });
