@@ -112,4 +112,22 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
+  it(`Custom Element.`, () => {
+    const html = `<root><img src="path/to/filename@2x.png"></root>`;
+    const correct = `<root><img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x"></root>`;
+
+    const res = posthtml(html, case1);
+
+    assert.equal(res, correct);
+  });
+
+  it(`remove srcset`, () => {
+    const html = `<img src="path/to/filename.png" srcset="">`;
+    const correct = `<img src="path/to/filename.png">`;
+
+    const res = posthtml(html, case1);
+
+    assert.equal(res, correct);
+  });
+
 });
