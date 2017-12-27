@@ -9,7 +9,7 @@ const case2 = {
 
 describe('common', () => {
 
-  it(`Not use.`, () => {
+  it('Not use.', () => {
     const html = `<img src="path/to/filename.png">`;
     const correct = `<img src="path/to/filename.png">`;
 
@@ -18,14 +18,14 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
-  it(`Query.`, () => {
+  it('Query.', () => {
     const html = `<img src="path/to/filename@2x.png?foo=bar">`;
     const correct = `<img src="path/to/filename.png?foo=bar" srcset="path/to/filename@2x.png?foo=bar 2x">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Multi line check.`, () => {
+  it('Multi line check.', () => {
     const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -64,7 +64,7 @@ describe('common', () => {
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Not Change. has srcset. img`, () => {
+  it('Not Change. has srcset. img', () => {
     const html = `<img src="path/to/filename.png" srcset="2x">`;
     const correct = html;
 
@@ -73,7 +73,7 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
-  it(`Not Change. has srcset. source`, () => {
+  it('Not Change. has srcset. source', () => {
     const html = `<picture>
 <source media="large" srcset="1x, 2x, 3x">
   <source media="medium" srcset="1x, 2x, 3x">
@@ -86,7 +86,7 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
-  it(`Not Change. has not srcset. img`, () => {
+  it('Not Change. has not srcset. img', () => {
     const html = `<img src="path/to/filename@2x.png">`;
     const correct = html;
 
@@ -95,7 +95,7 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
-  it(`forcibly remove src. source`, () => {
+  it('forcibly remove src. source', () => {
     const html = `<picture>
 <source media="large" src="path/to/filename@3x.png">
   <source media="medium" src="path/to/filename@3x.png">
@@ -112,7 +112,7 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
-  it(`Custom Element.`, () => {
+  it('Custom Element.', () => {
     const html = `<root><img src="path/to/filename@2x.png"></root>`;
     const correct = `<root><img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x"></root>`;
 
@@ -121,7 +121,7 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
-  it(`remove srcset`, () => {
+  it('remove srcset', () => {
     const html = `<img src="path/to/filename.png" srcset="">`;
     const correct = `<img src="path/to/filename.png">`;
 

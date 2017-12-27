@@ -47,7 +47,7 @@ const case8 = {
 };
 
 describe('picture', () => {
-  it(`No:1. Resolution check. use [case1] `, () => {
+  it('No:1. Resolution check. use [case1] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large.png" media="large" srcset="1x, 2x, 3x">
@@ -65,7 +65,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`No:2. Resolution check. use [case2 - replace: { large: '(min-width: 1000px)', medium: '(min-width: 800px)' } -] `, () => {
+  it('No:2. Resolution check. use [case2 - replace: { large: \'(min-width: 1000px)\', medium: \'(min-width: 800px)\' } -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large.png" media="large" srcset="1x, 2x, 3x">
@@ -83,7 +83,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case2), correct);
   });
 
-  it(`No:3. Resolution check. use [case3 - sourceSrc: false -] `, () => {
+  it('No:3. Resolution check. use [case3 - sourceSrc: false -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large.png" media="large" srcset="1x, 2x, 3x">
@@ -101,7 +101,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case3), correct);
   });
 
-  it(`No:4. Resolution check. use [case4 - case 2 + 3 -] `, () => {
+  it('No:4. Resolution check. use [case4 - case 2 + 3 -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large.png" media="large" srcset="1x, 2x, 3x">
@@ -120,7 +120,7 @@ describe('picture', () => {
   });
 
 
-  it(`No:5. Resolution check. No src. use [case1] `, () => {
+  it('No:5. Resolution check. No src. use [case1] ', () => {
     const html = `
 <picture>
   <source media="large" srcset="1x, 2x, 3x">
@@ -138,7 +138,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`No:6. Resolution check. No src. use [case2 - replace: { large: '(min-width: 1000px)', medium: '(min-width: 800px)' } -] `, () => {
+  it('No:6. Resolution check. No src. use [case2 - replace: { large: \'(min-width: 1000px)\', medium: \'(min-width: 800px)\' } -] ', () => {
     const html = `
 <picture>
   <source media="large" srcset="1x, 2x, 3x">
@@ -156,7 +156,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case2), correct);
   });
 
-  it(`No:7. Resolution check. No src. use [case3 - sourceSrc: false -] `, () => {
+  it('No:7. Resolution check. No src. use [case3 - sourceSrc: false -] ', () => {
     const html = `
 <picture>
   <source media="large" srcset="1x, 2x, 3x">
@@ -174,7 +174,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case3), correct);
   });
 
-  it(`No:8. Resolution check. No src. use [case4 - case 2 + 3 -] `, () => {
+  it('No:8. Resolution check. No src. use [case4 - case 2 + 3 -] ', () => {
     const html = `
 <picture>
   <source media="large" srcset="1x, 2x, 3x">
@@ -192,7 +192,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case4), correct);
   });
 
-  it(`No:9. Resolution check. extend. use [case1] `, () => {
+  it('No:9. Resolution check. extend. use [case1] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large@3x.png" media="large">
@@ -211,7 +211,7 @@ describe('picture', () => {
   });
 
 
-  it(`No:10. Responsive check. use [case1] `, () => {
+  it('No:10. Responsive check. use [case1] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large.png" media="large" srcset="320w, 640w, 900w">
@@ -229,7 +229,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`No:11. Responsive check. use [case2 - replace: { large: '(min-width: 1000px)', medium: '(min-width: 800px)' } -] `, () => {
+  it('No:11. Responsive check. use [case2 - replace: { large: \'(min-width: 1000px)\', medium: \'(min-width: 800px)\' } -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large.png" media="large" srcset="320w, 640w, 900w">
@@ -247,7 +247,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case2), correct);
   });
 
-  it(`No:12. Responsive check. use [case5 - responsiveSrcReplace: 320 -] `, () => {
+  it('No:12. Responsive check. use [case5 - responsiveSrcReplace: 320 -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large.png" media="large" srcset="320w, 640w, 900w">
@@ -265,7 +265,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case5), correct);
   });
 
-  it(`No:13. Responsive check. No src. use [case1] `, () => {
+  it('No:13. Responsive check. No src. use [case1] ', () => {
     const html = `
 <picture>
   <source media="large" srcset="320w, 640w, 900w">
@@ -283,7 +283,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`No:14. Responsive check. No src. use [case5 - responsiveSrcReplace: 320 -] `, () => {
+  it('No:14. Responsive check. No src. use [case5 - responsiveSrcReplace: 320 -] ', () => {
     const html = `
 <picture>
   <source media="large" srcset="320w, 640w, 900w">
@@ -301,7 +301,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case5), correct);
   });
 
-  it(`No:15. Responsive check. extend. use [case1] `, () => {
+  it('No:15. Responsive check. extend. use [case1] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large-640w.png" media="large">
@@ -319,7 +319,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`No:16. Responsive check. extend. use [case6 - responsive: true -] `, () => {
+  it('No:16. Responsive check. extend. use [case6 - responsive: true -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large-640w.png" media="large">
@@ -337,7 +337,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case6), correct);
   });
 
-  it(`No:17. Responsive check. extend. use [case7 - responsive: true, responsiveWidth: [320, 640, 900] -] `, () => {
+  it('No:17. Responsive check. extend. use [case7 - responsive: true, responsiveWidth: [320, 640, 900] -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large-640w.png" media="large">
@@ -355,7 +355,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case7), correct);
   });
 
-  it(`No:18. Responsive check. extend. use [case8 - case 2 + 7 -] `, () => {
+  it('No:18. Responsive check. extend. use [case8 - case 2 + 7 -] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large-640w.png" media="large">
@@ -373,7 +373,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case8), correct);
   });
 
-  it(`No:19. Responsive check. Empty srcset. use [case1] `, () => {
+  it('No:19. Responsive check. Empty srcset. use [case1] ', () => {
     const html = `
 <picture>
   <source src="path/to/filename-large-640w.png" media="large">
@@ -391,7 +391,7 @@ describe('picture', () => {
     assert.equal(posthtml(html, case8), correct);
   });
 
-  it(`No:20. Responsive check. not exists sources. use [case1] `, () => {
+  it('No:20. Responsive check. not exists sources. use [case1] ', () => {
     const html = `<picture><img src="path/to/filename-small-640w.png" alt=""></picture>`;
     const correct = `<picture><img src="path/to/filename-small-640w.png" alt="" srcset="path/to/filename-small-320w.png 320w,path/to/filename-small-640w.png 640w"></picture>`;
 

@@ -3,7 +3,7 @@ const options = require('../../lib/options');
 
 describe('Options test', () => {
 
-  it(`{ resolution: { src: false }}`, () => {
+  it('{ resolution: { src: false }}', () => {
     const opt = options({ resolution: { src: false }});
     assert.deepEqual(opt.resolution, {
       suffix: '@[match]x',
@@ -17,7 +17,7 @@ describe('Options test', () => {
     });
   });
 
-  it(`{ responsive: { srcset: false }}`, () => {
+  it('{ responsive: { srcset: false }}', () => {
     const opt = options({ responsive: { srcset: false }});
     assert.deepEqual(opt.responsive, {
       suffix: '-[match]w',
@@ -29,12 +29,12 @@ describe('Options test', () => {
     });
   });
 
-  it(`{ replace: { foo: 'test' }}`, () => {
+  it('{ replace: { foo: \'test\' }}', () => {
     const opt = options({ replace: { foo: 'test' }});
     assert.deepEqual(opt.replace, { foo: 'test' });
   });
 
-  it(`{ resolution: false, responsive: false }`, () => {
+  it('{ resolution: false, responsive: false }', () => {
     const opt = options({ resolution: false, responsive: false });
     assert.deepEqual(opt.resolution, {
       src: false,
@@ -55,7 +55,7 @@ describe('Options test', () => {
     });
   });
 
-  it(`undefined`, () => {
+  it('undefined', () => {
     const opt = options();
     delete opt.suffix;
     assert.deepEqual(opt, {

@@ -42,56 +42,56 @@ const case7 = {
 
 describe('srcset', () => {
 
-  it(`Basic src pattern.(resolution) use [case1]`, () => {
+  it('Basic src pattern.(resolution) use [case1]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Basic src pattern.(resolution) use [case2 - resolution.skip1x: false -]`, () => {
+  it('Basic src pattern.(resolution) use [case2 - resolution.skip1x: false -]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename.png,path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case2), correct);
   });
 
-  it(`Basic src pattern.(resolution) use [case3 - resolution.skip1xSuffix: false -]`, () => {
+  it('Basic src pattern.(resolution) use [case3 - resolution.skip1xSuffix: false -]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename@1x.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case3), correct);
   });
 
-  it(`Basic src pattern.(resolution) use [case4 - case 2 + 3 -]`, () => {
+  it('Basic src pattern.(resolution) use [case4 - case 2 + 3 -]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename@1x.png" srcset="path/to/filename@1x.png,path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case4), correct);
   });
 
-  it(`Basic src pattern.(resolution) use [case5 - resolution.srcReplace: -1 -]`, () => {
+  it('Basic src pattern.(resolution) use [case5 - resolution.srcReplace: -1 -]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case5), correct);
   });
 
-  it(`Basic src pattern.(resolution) use [case6 - case 3 + 5 -]`, () => {
+  it('Basic src pattern.(resolution) use [case6 - case 3 + 5 -]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case6), correct);
   });
 
-  it(`Basic src pattern.(resolution) use [case6 - case 3 + 5 -]`, () => {
+  it('Basic src pattern.(resolution) use [case6 - case 3 + 5 -]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case6), correct);
   });
 
-  it(`Basic src pattern.(resolution) use [case7 - resolution: { src: true, srcset: false } -]`, () => {
+  it('Basic src pattern.(resolution) use [case7 - resolution: { src: true, srcset: false } -]', () => {
     const html = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="1x, 2x, 3x">`;
 
@@ -99,28 +99,28 @@ describe('srcset', () => {
   });
 
 
-  it(`Src set suffix pattern.(resolution) use [case1]`, () => {
+  it('Src set suffix pattern.(resolution) use [case1]', () => {
     const html = `<img src="path/to/filename@2x.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Src set suffix pattern.(resolution) use [case2 - resolution.skip1x: false -]`, () => {
+  it('Src set suffix pattern.(resolution) use [case2 - resolution.skip1x: false -]', () => {
     const html = `<img src="path/to/filename@2x.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename.png,path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case2), correct);
   });
 
-  it(`Src set suffix pattern.(resolution) use [case3 - resolution.skip1xSuffix: false -]`, () => {
+  it('Src set suffix pattern.(resolution) use [case3 - resolution.skip1xSuffix: false -]', () => {
     const html = `<img src="path/to/filename@2x.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename@1x.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case3), correct);
   });
 
-  it(`Src set suffix pattern.(resolution) use [case5 - resolution.srcReplace: -1 -]`, () => {
+  it('Src set suffix pattern.(resolution) use [case5 - resolution.srcReplace: -1 -]', () => {
     const html = `<img src="path/to/filename@2x.png" srcset="1x, 2x, 3x">`;
     const correct = `<img src="path/to/filename@2x.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
@@ -128,21 +128,21 @@ describe('srcset', () => {
   });
 
 
-  it(`Result empty.(resolution) use [case1]`, () => {
+  it('Result empty.(resolution) use [case1]', () => {
     const html = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Mixed.(resolution) use [case1]`, () => {
+  it('Mixed.(resolution) use [case1]', () => {
     const html = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x,path/to/filename@3x.png 3x">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Mixed.(resolution) use [case7 - resolution: { src: true, srcset: false } -]`, () => {
+  it('Mixed.(resolution) use [case7 - resolution: { src: true, srcset: false } -]', () => {
     const html = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x, 3x">`;
     const correct = `<img src="path/to/filename.png" srcset="path/to/filename@2x.png 2x">`;
 

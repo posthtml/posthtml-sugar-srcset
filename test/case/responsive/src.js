@@ -62,49 +62,49 @@ const case7 = {
 
 describe('srcset', () => {
 
-  it(`Responsive size. use [case1]`, () => {
+  it('Responsive size. use [case1]', () => {
     const html = `<img src="path/to/filename-320w.png">`;
     const correct = `<img src="path/to/filename-320w.png" srcset="path/to/filename-320w.png 320w">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Responsive size. use [case2 - responsive.srcReplace: 640 -]`, () => {
+  it('Responsive size. use [case2 - responsive.srcReplace: 640 -]', () => {
     const html = `<img src="path/to/filename-320w.png">`;
     const correct = `<img src="path/to/filename-640w.png" srcset="path/to/filename-320w.png 320w">`;
 
     assert.equal(posthtml(html, case2), correct);
   });
 
-  it(`Responsive size. use [case3 - responsive.srcReplace: -1 -]`, () => {
+  it('Responsive size. use [case3 - responsive.srcReplace: -1 -]', () => {
     const html = `<img src="path/to/filename-320w.png">`;
     const correct = `<img src="path/to/filename-320w.png" srcset="path/to/filename-320w.png 320w">`;
 
     assert.equal(posthtml(html, case3), correct);
   });
 
-  it(`Responsive size. use [case4 - responsive: { src: false, srcset: true } -]`, () => {
+  it('Responsive size. use [case4 - responsive: { src: false, srcset: true } -]', () => {
     const html = `<img src="path/to/filename-320w.png">`;
     const correct = `<img src="path/to/filename-320w.png">`;
 
     assert.equal(posthtml(html, case4), correct);
   });
 
-  it(`Responsive size. use [case5 - replace: { defaultSizes: '(max-width: 700px) 50vw,700px' } -]`, () => {
+  it('Responsive size. use [case5 - replace: { defaultSizes: \'(max-width: 700px) 50vw,700px\' } -]', () => {
     const html = `<img src="path/to/filename-320w.png">`;
     const correct = `<img src="path/to/filename-320w.png" srcset="path/to/filename-320w.png 320w" sizes="(max-width: 700px) 50vw, 700px">`;
 
     assert.equal(posthtml(html, case5), correct);
   });
 
-  it(`Responsive size. use [case6 - replace: { test: '(max-width: 700px) 50vw', test2: '(max-width: 1000px) 80vw', test3: '500px' } -]`, () => {
+  it('Responsive size. use [case6 - replace: { test: \'(max-width: 700px) 50vw\', test2: \'(max-width: 1000px) 80vw\', test3: \'500px\' } -]', () => {
     const html = `<img src="path/to/filename-320w.png">`;
     const correct = `<img src="path/to/filename-320w.png" srcset="path/to/filename-320w.png 320w">`;
 
     assert.equal(posthtml(html, case6), correct);
   });
 
-  it(`Responsive size. use [case7 - case 5 + 6 -]`, () => {
+  it('Responsive size. use [case7 - case 5 + 6 -]', () => {
     const html = `<img src="path/to/filename-320w.png">`;
     const correct = `<img src="path/to/filename-320w.png" srcset="path/to/filename-320w.png 320w" sizes="(max-width: 700px) 50vw, 700px">`;
 
@@ -112,14 +112,14 @@ describe('srcset', () => {
   });
 
 
-  it(`Max check for Responsive size. use [case1]`, () => {
+  it('Max check for Responsive size. use [case1]', () => {
     const html = `<img src="path/to/filename-640w.png">`;
     const correct = `<img src="path/to/filename-320w.png" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Max check for Responsive size. use [case2 - responsive.srcReplace: 640 -]`, () => {
+  it('Max check for Responsive size. use [case2 - responsive.srcReplace: 640 -]', () => {
     const html = `<img src="path/to/filename-640w.png">`;
     const correct = `<img src="path/to/filename-640w.png" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
@@ -127,14 +127,14 @@ describe('srcset', () => {
   });
 
 
-  it(`Not change sizes. use [case1]`, () => {
+  it('Not change sizes. use [case1]', () => {
     const html = `<img src="path/to/filename-640w.png" sizes="50vw">`;
     const correct = `<img src="path/to/filename-320w.png" sizes="50vw" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
     assert.equal(posthtml(html, case1), correct);
   });
 
-  it(`Not change sizes. use [case5 - replace: { defaultSizes: '(max-width: 700px) 50vw,700px' } -]`, () => {
+  it('Not change sizes. use [case5 - replace: { defaultSizes: \'(max-width: 700px) 50vw,700px\' } -]', () => {
     const html = `<img src="path/to/filename-640w.png" sizes="50vw">`;
     const correct = `<img src="path/to/filename-320w.png" sizes="50vw" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
@@ -142,28 +142,28 @@ describe('srcset', () => {
   });
 
 
-  it(`Multi sizes. use [case5 - replace: { defaultSizes: '(max-width: 700px) 50vw,700px' } -]`, () => {
+  it('Multi sizes. use [case5 - replace: { defaultSizes: \'(max-width: 700px) 50vw,700px\' } -]', () => {
     const html = `<img src="path/to/filename-640w.png" sizes="test, test2, test3">`;
     const correct = `<img src="path/to/filename-320w.png" sizes="test, test2, test3" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
     assert.equal(posthtml(html, case5), correct);
   });
 
-  it(`Multi sizes. use [case6 - replace: { test: '(max-width: 700px) 50vw', test2: '(max-width: 1000px) 80vw', test3: '500px' } -]`, () => {
+  it('Multi sizes. use [case6 - replace: { test: \'(max-width: 700px) 50vw\', test2: \'(max-width: 1000px) 80vw\', test3: \'500px\' } -]', () => {
     const html = `<img src="path/to/filename-640w.png" sizes="test, test2, test3">`;
     const correct = `<img src="path/to/filename-320w.png" sizes="(max-width: 700px) 50vw,(max-width: 1000px) 80vw,500px" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
     assert.equal(posthtml(html, case6), correct);
   });
 
-  it(`Multi sizes. use [case7 - case 5 + 6 -]`, () => {
+  it('Multi sizes. use [case7 - case 5 + 6 -]', () => {
     const html = `<img src="path/to/filename-640w.png" sizes="test, test2, test3">`;
     const correct = `<img src="path/to/filename-320w.png" sizes="(max-width: 700px) 50vw,(max-width: 1000px) 80vw,500px" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
     assert.equal(posthtml(html, case7), correct);
   });
 
-  it(`Mix sizes. use [case7 - case 5 + 6 -]`, () => {
+  it('Mix sizes. use [case7 - case 5 + 6 -]', () => {
     const html = `<img src="path/to/filename-640w.png" sizes="test, test2, 1000px">`;
     const correct = `<img src="path/to/filename-320w.png" sizes="(max-width: 700px) 50vw,(max-width: 1000px) 80vw, 1000px" srcset="path/to/filename-320w.png 320w,path/to/filename-640w.png 640w">`;
 
