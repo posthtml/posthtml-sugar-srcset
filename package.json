@@ -1,6 +1,6 @@
 {
   "name": "posthtml-sugar-srcset",
-  "version": "0.2.0",
+  "version": "1.0.0-alpha",
   "description": "This shortens the description of the value of srcset.",
   "main": "lib/index.js",
   "repository": {
