@@ -47,8 +47,7 @@ Output:
 const posthtml = require('posthtml');
 const srcset = require('posthtml-sugar-srcset');
 
-posthtml()
-  .use(srcset())
+posthtml([srcset()])
   .process(html)
   .then(res => console.log(res.html));
 ```
