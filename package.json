@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/Tsuguya/posthtml-sugar-srcset"
   },
+  "engines" : {
+    "node" : ">=6"
+  },
   "scripts": {
     "test": "nyc mocha 'test/**/*.js'",
     "lint": "eslint lib/** --fix",
