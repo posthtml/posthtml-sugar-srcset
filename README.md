@@ -54,8 +54,6 @@ posthtml([srcset()])
 
 ## Options
 
-It is the quickest to refer to [test case](https://github.com/Tsuguya/posthtml-sugar-srcset/tree/master/test).
-
 #### resolution
 
 Type: `Object`
