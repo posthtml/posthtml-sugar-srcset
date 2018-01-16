@@ -62,44 +62,54 @@ Type: `Object`
 
 #### resolution.src
 
-Type: `boolean`<br>
+Type: `boolean`  
 Default: `true`
 
-Do not check for display pixel ratio when the false.
+If false, pixel density descriptor will not be converted.
 
 #### resolution.srcset
 
-Type: `boolean`<br>
+Type: `boolean`  
 Default: `true`
 
-Do not check for display pixel ratio when the false.
+If false, pixel density descriptor will not be converted.
 
 ##### resolution.suffix
 
-Type: `string`<br>
+Type: `string`  
 Default: `@[match]x`
+
+Reference string.  
+If this pattern is included in src, it is based on the character excluding the pattern.
 
 ##### resolution.pixelRatio
 
-Type: `Array`<br>
+Type: `Array`  
 Default: `[1, 2, 3, 4]`
 
 src based filtering list.
 
 ##### resolution.skip1x
 
-Type: `boolean`
+Type: `boolean`  
+Default: `true`
 
 If srcset is 1x, omitted.
 
 ##### resolution.skip1xSuffix
 
-Type: `boolean`
+Type: `boolean`  
+Default: `true`
+
+If true, omitting the 1x word input of srcset.
 
 ##### resolution.srcReplace
 
-Type: `number`<br>
+Type: `number`  
 Default: `1`
+
+Default value of src.  
+If -1, base string is used.
 
 #### responsive
 
@@ -107,19 +117,24 @@ Type: `Object`
 
 ##### responsive.src
 
-Type: `boolean`<br>
+Type: `boolean`  
 Default: `true`
+
+If false, width descriptor will not be converted.
 
 ##### responsive.srcset
 
-Type: `boolean`<br>
+Type: `boolean`  
 Default: `true`
+
+If false, width descriptor will not be converted.
 
 ##### responsive.width
 
-Type: `Array`<br>
+Type: `Array`  
 Default `[]`
 
+src based filtering list.  
 Only be used if `responsive.src: true`.
 
 ex)
@@ -135,20 +150,26 @@ srcset({
 
 ##### responsive.suffix
 
-Type: `string`<br>
+Type: `string`  
 Default: `-[match]w`
+
+Reference string.  
+If this pattern is included in src, it is based on the character excluding the pattern.
 
 ##### responsive.srcReplace
 
-Type: `number`<br>
+Type: `number`  
 Default: `-1`
+
+Default value of src.  
+If -1, base string is used.
 
 #### replace
 
-Type: `Object`<br>
+Type: `Object`  
 Default: `{}`
 
-Is the alias that can be used in sizes and media.<br>
+Is the alias that can be used in sizes and media.  
 Valid only in the source tag with a picture tag to the parent.
 
 ex)
@@ -189,8 +210,8 @@ After
 
 #### sourceSrc
 
-Type: `boolean`<br>
+Type: `boolean`  
 Default: `true`
 
-If you true, to use the src attribute of the source tag.<br>
+If you true, to use the src attribute of the source tag.  
 After use, delete it.
