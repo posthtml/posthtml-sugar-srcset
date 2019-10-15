@@ -1,7 +1,7 @@
 # posthtml-sugar-srcset
 
 [![npm version](https://badge.fury.io/js/posthtml-sugar-srcset.svg)](https://badge.fury.io/js/posthtml-sugar-srcset)
-[![Build Status](https://travis-ci.org/Tsuguya/posthtml-sugar-srcset.svg?branch=master)](https://travis-ci.org/Tsuguya/posthtml-sugar-srcset)
+[![Build Status](https://travis-ci.org/posthtml/posthtml-sugar-srcset.svg?branch=master)](https://travis-ci.org/posthtml/posthtml-sugar-srcset)
 
 Sugar for srcset attributes of the image tag.
 

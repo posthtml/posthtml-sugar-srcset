@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Tsuguya/posthtml-sugar-srcset"
+    "url": "https://github.com/posthtml/posthtml-sugar-srcset"
   },
   "engines": {
     "node": ">=6"
