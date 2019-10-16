@@ -130,4 +130,22 @@ describe('common', () => {
     assert.equal(res, correct);
   });
 
+  it('url include protocol.', () => {
+    const html = `<img src="http://example.com/path/to/filename.png" srcset="2x">`;
+    const correct = `<img src="http://example.com/path/to/filename.png" srcset="http://example.com/path/to/filename@2x.png 2x">`;
+
+    const res = posthtml(html, case1);
+
+    assert.equal(res, correct);
+  });
+
+  it('url absolute path.', () => {
+    const html = `<img src="/path/to/filename.png" srcset="2x">`;
+    const correct = `<img src="/path/to/filename.png" srcset="/path/to/filename@2x.png 2x">`;
+
+    const res = posthtml(html, case1);
+
+    assert.equal(res, correct);
+  });
+
 });
