@@ -37,7 +37,7 @@
     "lint-staged": "^10.5.1",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
-    "posthtml": "^0.14.0",
+    "posthtml": "^0.15.0",
     "power-assert": "^1.6.1"
   },
   "eslintConfig": {
