@@ -1746,9 +1746,9 @@ posthtml-render@^1.2.3:
   integrity sha512-rGGayND//VwTlsYKNqdILsA7U/XP0WJa6SMcdAEoqc2WRM5QExplGg/h9qbTuHz7mc2PvaXU+6iNxItvr5aHMg==
 
 posthtml@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/posthtml/-/posthtml-0.15.0.tgz#1b783abe2899b7796d2dbec98c45dfe069213370"
-  integrity sha512-3M2OHOuyiE5hiEJLo070KWsnMnDgxQuaLexWMekA7/ikz0vC799OqXlUMlFYIrp6krz3zgQfNqSyzg9SvdOm9A==
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/posthtml/-/posthtml-0.15.1.tgz#1848064f48a1cca0e0323752b1d26fed32e180b8"
+  integrity sha512-QSnUnvnnRv+wt7T9igqNG7GPcc+ZsbX93X+9aPldzgiuQfqIXTbnD47FY8pAtq4gjB9QZrDadDuG8jusmOPpYA==
   dependencies:
     posthtml-parser "^0.6.0"
     posthtml-render "^1.2.3"
