@@ -1725,18 +1725,18 @@ posthtml-parser@^0.9.0:
   dependencies:
     htmlparser2 "^6.0.0"
 
-posthtml-render@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/posthtml-render/-/posthtml-render-2.0.3.tgz#698e8153276e4c917546276c762e7d08c2f291b3"
-  integrity sha512-5DUBp+gDFNkBzHeSQp0UbuIGpD5HxfhW9mDmSB1eO7zZ26bX/XuYA16t+cosW+HoSzcF3FoMDRy5fWbg5G3c5Q==
+posthtml-render@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/posthtml-render/-/posthtml-render-2.0.4.tgz#35bd1a178a7546d454a31112160f87dcc7825cb2"
+  integrity sha512-ae9MlVnFF9OgDSw2/iR8GR2n6r9UMaMVU+xbTRix4VCyELzsLXUCeANQjIehxo1jweIxaI5v5k2xeJyJdW8REA==
 
 posthtml@^0.16.0:
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/posthtml/-/posthtml-0.16.1.tgz#a27618845254669da644e8ceea4c9c3ddce6396d"
-  integrity sha512-pzZz2ew2m/vP3fDyQ+JCxTMaVhqt0gFTMAR1dywkoQbxfYOreP2DCxtVEc91k2H7XwWSSL37o80vfG3PSFevmg==
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/posthtml/-/posthtml-0.16.2.tgz#25dfa3e6ecb3ebf84b25564bbd2ea60f6c03c6d5"
+  integrity sha512-t7wjU42pT72ksKRLDcY+wFeTgbl/mGgl+e1nrI8UuYc8txXau6ATBNeota+NXNPUHw//NZoFk5p1wkvomN6bWQ==
   dependencies:
     posthtml-parser "^0.9.0"
-    posthtml-render "^2.0.3"
+    posthtml-render "^2.0.4"
 
 power-assert-context-formatter@^1.0.7:
   version "1.2.0"
